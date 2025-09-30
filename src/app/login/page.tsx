@@ -8,7 +8,7 @@ export default function Page() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
 
-  async function handleSubmit(e) {
+  async function submitHandler(e) {
     e.preventDefault()
     setError("")
 
@@ -27,7 +27,7 @@ export default function Page() {
         </h2>
       </div>
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={submitHandler} className="space-y-6">
           <div>
             <label
               htmlFor="username"
@@ -64,8 +64,6 @@ export default function Page() {
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
-                autoComplete="current-password"
                 className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
               />
             </div>
@@ -78,7 +76,7 @@ export default function Page() {
               Logga in
             </button>
           </div>
-          {error && <p className="text-red-400 text-sm">{error}</p>}
+        
         </form>
       </div>
     </div>
